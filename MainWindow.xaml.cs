@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using WpfApp19.Windows;
 
 namespace WpfApp19
 {
@@ -48,7 +49,7 @@ namespace WpfApp19
             {
                 return;
             }
-            File.WriteAllText(textbox.Text,saveFile.FileName);
+            File.WriteAllText(saveFile.FileName, textbox.Text);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -58,7 +59,8 @@ namespace WpfApp19
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-
+            exitwindow exitwindow = new exitwindow() {text = textbox.Text };
+            exitwindow.ShowDialog();
         }
     }
 }
